@@ -6,9 +6,9 @@
 		public static function setConnection()
 		{
 			$configuration = [
-				'host' => 'localhost',
-				'databse' => 'pyrazinamite',
-				'username' => 'root',
+				'host' => 'kimpoyebeb',
+				'databse' => '',
+				'username' => '',
 				'password' => ''
 			];
 			
@@ -17,7 +17,8 @@
 		
 		public static function getConfiguration()
 		{
-			return $this->setConnection()['host'];
+			//return $this->setConnection()['host'];
+			return 'waw';
 		}
 		
 		

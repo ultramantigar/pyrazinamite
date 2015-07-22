@@ -6,7 +6,7 @@ class main
 	{
 		$configuration = [
 
-			'security.salt' => 'perwasean',
+			'security.salt' => 'pyrazinamite',
 
 		];
 
