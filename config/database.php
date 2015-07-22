@@ -1,13 +1,12 @@
-<?php
-	namespace pyrazinamite\config;
+<?php namespace config;
 	
-	class Database
+	class database
 	{
-		public static function setConnection()
+		public  function setConnection()
 		{
 			$configuration = [
 				'host' => 'localhost',
-				'databse' => 'pyrazinamite',
+				'database' => 'pyrazinamite',
 				'username' => 'root',
 				'password' => ''
 			];
@@ -15,9 +14,23 @@
 			return $configuration;
 		}
 		
-		public static function getConfiguration()
+		public  function getConnection()
 		{
-			return $this->setConnection()['host'];
+	
+			$connection = $this->setConnection();
+
+			$host = $connection['host'];
+			$database = $connection['database'];
+			$username = $connection['username'];
+			$password = $connection['password'];
+
+			$mysqlConnect = mysql_connect($host , $username , $password);
+			$mysqlDatabase = mysql_select_db($database);
+
+			if(!$mysqlConnect || !$mysqlDatabase)
+			{
+				echo 'error database configuration , connection or database name incorrect cek your configuration in config/database.php';
+			}
 		}
 		
 		
